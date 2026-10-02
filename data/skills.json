@@ -1,0 +1,90 @@
+[
+  {
+    "name": "pdf_extractor",
+    "description": "Extract text, tables, and metadata from PDF documents"
+  },
+  {
+    "name": "web_scraper",
+    "description": "Scrape and parse content from websites and web pages"
+  },
+  {
+    "name": "code_generator",
+    "description": "Write, complete, or scaffold code in any programming language"
+  },
+  {
+    "name": "code_reviewer",
+    "description": "Review code for bugs, security vulnerabilities, and style issues"
+  },
+  {
+    "name": "sql_query_builder",
+    "description": "Write, optimize, and debug SQL queries for relational databases"
+  },
+  {
+    "name": "data_analyst",
+    "description": "Analyze datasets, compute statistics, and surface insights from structured data"
+  },
+  {
+    "name": "chart_generator",
+    "description": "Create charts, graphs, and data visualizations from tabular data"
+  },
+  {
+    "name": "email_composer",
+    "description": "Draft professional emails, replies, and follow-ups with appropriate tone"
+  },
+  {
+    "name": "document_summarizer",
+    "description": "Summarize long documents, reports, or articles into concise key points"
+  },
+  {
+    "name": "translation",
+    "description": "Translate text between languages while preserving meaning and tone"
+  },
+  {
+    "name": "sentiment_analyzer",
+    "description": "Classify the sentiment of text as positive, negative, or neutral"
+  },
+  {
+    "name": "image_captioner",
+    "description": "Generate descriptive captions or alt text for images"
+  },
+  {
+    "name": "calendar_scheduler",
+    "description": "Parse scheduling requests and create or manage calendar events"
+  },
+  {
+    "name": "knowledge_base_search",
+    "description": "Search an internal knowledge base or documentation to answer questions"
+  },
+  {
+    "name": "ticket_classifier",
+    "description": "Classify support tickets by category, priority, and routing team"
+  },
+  {
+    "name": "contract_analyzer",
+    "description": "Analyze legal contracts for key clauses, obligations, and risk flags"
+  },
+  {
+    "name": "api_caller",
+    "description": "Construct and execute HTTP API calls to external services"
+  },
+  {
+    "name": "form_filler",
+    "description": "Extract structured data from unstructured text to fill forms or templates"
+  },
+  {
+    "name": "test_generator",
+    "description": "Generate unit tests, integration tests, and test fixtures for code"
+  },
+  {
+    "name": "shell_executor",
+    "description": "Run shell commands, scripts, and system operations in a sandboxed environment"
+  },
+  {
+    "name": "meeting_notes",
+    "description": "Transcribe, structure, and summarize meeting recordings or transcripts"
+  },
+  {
+    "name": "pii_redactor",
+    "description": "Detect and redact personally identifiable information from text or documents"
+  }
+]
