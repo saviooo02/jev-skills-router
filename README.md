@@ -1,5 +1,15 @@
 # jev-skill-router
 
+```
+       _                   __   _ ____                    __
+      (_)__ _   __   _____/ /__(_) / /  _________  __  __/ /____  _____
+     / / _ \ | / /  / ___/ //_/ / / /  / ___/ __ \/ / / / __/ _ \/ ___/
+    / /  __/ |/ /  (__  ) ,< / / / /  / /  / /_/ / /_/ / /_/  __/ /
+ __/ /\___/|___/  /____/_/|_/_/_/_/  /_/   \____/\__,_/\__/\___/_/
+/___/
+              ~ route agent skills in milliseconds, not seconds ~
+```
+
 Fast, cheap AI agent skill routing powered by [TypeSafe's Jev](https://typesafe.ai) — a System One decision model that replaces an LLM call for routing with single-digit-millisecond latency at a fraction of the cost.
 
 ---
@@ -165,6 +175,31 @@ Tests cover model construction, confidence-to-decision mapping, and router valid
 ---
 
 ## How It Works
+
+```
+                     ┌───────────────────────────────┐
+  "Extract tables    │          SkillRouter          │
+   from this PDF" ──▶│  skills ──▶ Choice question   │
+                     │  + __none__ fallback option   │
+                     └───────────────┬───────────────┘
+                                     │  system_one(state=query, ...)
+                                     ▼
+                     ┌───────────────────────────────┐
+                     │         TypeSafe Jev          │
+                     │  structured prediction, <10ms │
+                     └───────────────┬───────────────┘
+                                     │  skill + confidence + probs
+                                     ▼
+                     ┌───────────────────────────────┐
+                     │      Threshold policy         │
+                     └───┬───────────┬───────────┬───┘
+                         │           │           │
+                    ≥ 0.75      0.45–0.74     < 0.45
+                         ▼           ▼           ▼
+                     ┌───────┐  ┌────────┐   ┌───────┐
+                     │ ROUTE │  │ REVIEW │   │ NONE  │
+                     └───────┘  └────────┘   └───────┘
+```
 
 1. **SkillRouter** builds a `Choice` question with one criterion per skill (name → description) plus a `__none__` fallback option.
 2. It calls `TypeSafeClient.system_one(state=query, questions={"skill": Choice(...)})`.
